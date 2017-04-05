@@ -1,0 +1,117 @@
+<resources>
+
+  <!-- font sizes -->
+  <dimen name="font_extra_large">32sp</dimen>
+  <dimen name="font_largest">28sp</dimen>
+  <dimen name="font_larger">24sp</dimen>
+  <dimen name="font_large">20sp</dimen>
+  <dimen name="font_little_large">18sp</dimen>
+  <dimen name="font_middle">16sp</dimen>
+  <dimen name="font_normal">14sp</dimen>
+  <dimen name="font_little_small">13sp</dimen>
+  <dimen name="font_small">12sp</dimen>
+  <dimen name="font_smaller">10sp</dimen>
+  <dimen name="font_smallest">8sp</dimen>
+
+  <!-- normal dimens -->
+  <dimen name="margin_extreme_large">40dip</dimen>
+  <dimen name="margin_extra_large">36dip</dimen>
+  <dimen name="margin_largest">32dip</dimen>
+  <dimen name="margin_larger">28dip</dimen>
+  <dimen name="margin_large">24dip</dimen>
+  <dimen name="margin_middle">20dip</dimen>
+  <dimen name="margin_normal">16dip</dimen>
+  <dimen name="margin_little_small">14dip</dimen>
+  <dimen name="margin_small">12dip</dimen>
+  <dimen name="margin_smaller">8dip</dimen>
+  <dimen name="margin_smallest">6dip</dimen>
+  <dimen name="margin_extra_small">4dip</dimen>
+  <dimen name="margin_extreme_small">2dip</dimen>
+
+  <dimen name="padding_extreme_large">40dip</dimen>
+  <dimen name="padding_extra_large">36dip</dimen>
+  <dimen name="padding_large">24dip</dimen>
+  <dimen name="padding_little_large">22dip</dimen>
+  <dimen name="padding_middle">20dip</dimen>
+  <dimen name="padding_normal">16dip</dimen>
+  <dimen name="padding_little_small">14dip</dimen>
+  <dimen name="padding_small">12dip</dimen>
+  <dimen name="padding_smaller">8dip</dimen>
+  <dimen name="padding_smallest">6dip</dimen>
+  <dimen name="padding_extra_small">4dip</dimen>
+  <dimen name="padding_extreme_small">2dip</dimen>
+
+  <dimen name="divider_size">0.5dip</dimen>
+  <dimen name="divider_width">1dip</dimen>
+  <dimen name="divider_dash_gap">2dip</dimen>
+  <dimen name="divider_dash_width">2dip</dimen>
+  <dimen name="divider_dash_size">2dip</dimen>
+  <dimen name="divider_square_radius">3.5dip</dimen>
+  <dimen name="radius">25dip</dimen>
+  <dimen name="radius12">12dip</dimen>
+  <dimen name="radius_extreme_small">4dip</dimen>
+
+  <!--  item-->
+  <dimen name="item_height">42dp</dimen>
+  <dimen name="button_height">40dp</dimen>
+  <dimen name="button_height_small">35dp</dimen>
+  <dimen name="edittext_height">45dp</dimen>
+  <dimen name="image_captcha_height">40dp</dimen>
+
+  <!--repayment-->
+  <dimen name="divider_height">0.5dip</dimen>
+  <dimen name="bank_icon_size">25dip</dimen>
+
+  <dimen name="list_bankcard_icon">35dp</dimen>
+  <dimen name="list_main_icon_small">25dp</dimen>
+  <dimen name="list_tool_icon">45dp</dimen>
+
+  <dimen name="home_round_button_height">36dip</dimen>
+
+  <dimen name="pager_sliding_tab_strip_height">48dp</dimen>
+  <dimen name="pager_indicator_height">2dp</dimen>
+
+  <!--pushmessage item-->
+  <dimen name="item_date_width">80dip</dimen>
+  <dimen name="item_date_height">23.3dip</dimen>
+  <dimen name="item_date_icon">12dip</dimen>
+  <dimen name="item_date_bg_radius">25dip</dimen>
+  <dimen name="item_image_height">153.3dip</dimen>
+  <dimen name="item_text_content_height">92dip</dimen>
+  <dimen name="item_text_content_padding">13.3dip</dimen>
+  <dimen name="item_margin">10dip</dimen>
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+
+  <!--welcome-->
+  <dimen name="indicator_size">5dp</dimen>
+
+  <dimen name="feedback_picture">82.7dp</dimen>
+  <dimen name="radio_margin_bottom">65dip</dimen>
+  <dimen name="personal_divider_margin">56dp</dimen>
+  <dimen name="banner_radius">4.5dp</dimen>
+
+  <dimen name="application_results_progress_margin">54dp</dimen>
+
+  <!-- gesture -->
+  <dimen name="dialog_edit_margin">16dp</dimen>
+  <dimen name="_0dp">0dp</dimen>
+  <dimen name="_0.5dp">0.5dp</dimen>
+  <dimen name="_1dp">1dp</dimen>
+  <dimen name="_2dp">2dp</dimen>
+  <dimen name="_5dp">5dp</dimen>
+  <dimen name="_10dp">10dp</dimen>
+  <dimen name="_20dp">20dp</dimen>
+  <dimen name="_24dp">24dp</dimen>
+  <dimen name="_30dp">30dp</dimen>
+  <dimen name="_40dp">40dp</dimen>
+  <dimen name="_50dp">50dp</dimen>
+  <dimen name="_68dp">68dp</dimen>
+  <dimen name="_100dp">100dp</dimen>
+  <dimen name="_150dp">150dp</dimen>
+  <dimen name="_320dp">320dp</dimen>
+  <dimen name="_16sp">16sp</dimen>
+  <dimen name="_14sp">14sp</dimen>
+  <dimen name="_12sp">12sp</dimen>
+</resources>

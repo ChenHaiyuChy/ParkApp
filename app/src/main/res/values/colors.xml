@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- defualt -->
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+  <color name="transparent">#00000000</color>
+
+  <color name="primary_color">#0098ff</color>
+  <color name="primary_color_dark">#2c65af</color>
+  <color name="primary_color_darker">#0077ba</color>
+  <color name="background">#f5f5f5</color>
+  <color name="transparent_gray">#28000000</color>
+
+  <color name="primary_color_light">#51c0ff</color>
+  <color name="primary_light_blue">#4c7ee9</color>
+  <color name="primary_light_blue_dark">#3764e4</color>
+
+  <color name="black_transparent_50">#80000000</color>
+  <color name="divider">#ffd8d8d8</color>
+  <color name="divider_light_gray">#dfdfdf</color>
+
+  <color name="light_gray">#e0e0e0</color>
+  <color name="lighter_gray">#f0f0f0</color>
+
+  <color name="text_yellow">#ffffa200</color>
+  <color name="text_orange">#ffff6600</color>
+  <color name="text_blue">#559bfc</color>
+  <color name="text_red">#ff0000</color>
+  <color name="text_dark_gray">#ff585858</color>
+  <color name="text_gray_dark">#A2A2A2</color>
+  <color name="text_dark">#999999</color>
+  <color name="text_gray">#ff999999</color>
+  <color name="text_black">#ff000000</color>
+  <color name="text_light_white">#7fffffff</color>
+  <color name="text_light_gray">#cccccc</color>
+  <color name="text_yellow_tip">#af6f0a</color>
+  <color name="text_blue_sms">#4c7ee9</color>
+  <color name="bg_yellow">#ffe400</color>
+  <color name="text_orange_tip">#EAAE20</color>
+  <color name="bg_yellow_tip">#FFF6E7</color>
+
+  <color name="text_primary">#333333</color>
+  <color name="text_secondary">#666666</color>
+  <color name="text_hint">#999999</color>
+
+  <color name="button_disabled">#c0c0c0</color>
+  <color name="white_button_pressed">#e0e0e0</color>
+
+  <color name="grass_green">#ff774d</color>
+  <color name="grass_green_pressed">#82a81e</color>
+  <color name="red">#ff0000</color>
+  <color name="white">#ffffff</color>
+  <color name="black">#000000</color>
+
+  <color name="message_date_background">#d1d1d1</color>
+  <color name="message_title">#333333</color>
+  <color name="message_content">#999999</color>
+  <color name="button_yellow_unpressed">#ffffa200</color>
+  <color name="button_yellow_pressed">#aaffa200</color>
+  <color name="button_red_unpressed">#ffff0000</color>
+  <color name="button_red_pressed">#aaff0000</color>
+  <color name="accent">#0babed</color>
+  <color name="saffron_yellow">#ff9000</color>
+  <color name="saffron_red">#ff0d0d</color>
+  <color name="wathet">#1a99fc</color>
+  <color name="bg_message_fragment">#eeeeee</color>
+
+  <color name="button_login_normal">#86c9f0</color>
+
+  <color name="indicator_normal">#cbcbcb</color>
+  <color name="indicator_checked">#f46f47</color>
+
+  <color name="scan_guide">#ff559bfc</color>
+
+  <color name="home_bg_new_year">#d01818</color>
+  <color name="home_tab_new_year_checked">#ef0d0d</color>
+  <color name="home_tab_new_year_uncheck">#999999</color>
+
+  <!-- gesture -->
+  <color name="dialog_title_color">#333333</color>
+  <color name="dialog_text_blue">#4C7EE9</color>
+  <color name="dialog_text_gray">#CCCCCC</color>
+  <color name="dialog_divider">#dfdfdf</color>
+  <color name="dialog_bg">#FCFCFC</color>
+
+  <color name="text_gray_light">#AAAAAA</color>
+</resources>
