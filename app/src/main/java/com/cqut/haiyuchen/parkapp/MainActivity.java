@@ -5,14 +5,11 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
 import com.cqut.haiyuchen.parkapp.ui.widget.BaseActivity;
-import com.cqut.haiyuchen.parkapp.ui.widget.BindView;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
-public class MainActivity extends BaseActivity {
-  private static final int REFRESH_DELAY = 500;
+public class MainActivity  {
+  /*private static final int REFRESH_DELAY = 500;
   @BindView(R.id.main_tv_ledtime) TextView mTextView;
 
   @Override public int layoutResId() {
@@ -44,5 +41,5 @@ public class MainActivity extends BaseActivity {
   @Override protected void onStop() {
     super.onStop();
     mHandler.removeCallbacks(mTimeRefresher);
-  }
+  }*/
 }

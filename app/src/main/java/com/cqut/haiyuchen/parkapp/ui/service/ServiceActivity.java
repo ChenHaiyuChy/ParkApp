@@ -13,7 +13,6 @@ import com.cqut.haiyuchen.parkapp.data.entitis.ABC;
 import com.cqut.haiyuchen.parkapp.ui.listview.ListViewAdapter;
 import com.cqut.haiyuchen.parkapp.ui.listview.OnScrollListView;
 import com.cqut.haiyuchen.parkapp.ui.widget.BaseActivity;
-import com.cqut.haiyuchen.parkapp.ui.widget.BindView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +22,9 @@ import java.util.Map;
  * Created by haiyu.chen on 2017/4/1.
  */
 
-public class ServiceActivity extends BaseActivity {
+public class ServiceActivity {
 
-  @BindView(R.id.list_view) OnScrollListView listView;
+  /*@BindView(R.id.list_view) OnScrollListView listView;
   @BindView(R.id.empty_view) TextView emptyView;
 
   List<Map<String, Object>> list = new ArrayList<>();
@@ -89,5 +88,5 @@ public class ServiceActivity extends BaseActivity {
       map.put("info", ABC.values()[(int) (Math.random() * 26)].getName());
       list.add(map);
     }
-  }
+  }*/
 }

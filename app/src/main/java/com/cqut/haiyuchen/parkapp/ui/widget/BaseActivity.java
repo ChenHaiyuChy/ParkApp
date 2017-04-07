@@ -1,15 +1,22 @@
 package com.cqut.haiyuchen.parkapp.ui.widget;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import java.lang.reflect.Field;
+import android.support.v7.app.AppCompatActivity;
+import butterknife.ButterKnife;
+import com.cqut.haiyuchen.parkapp.di.AppComponent;
+import com.cqut.haiyuchen.parkapp.di.AppPresenter;
+import com.cqut.haiyuchen.parkapp.di.BaseApplication;
+import javax.inject.Inject;
 
 /**
  * Created by haiyu.chen on 2017/3/31.
  */
 
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity<T extends AppPresenter> extends AppCompatActivity {
+  private ProgressDialog progressDialog;
+  @Inject protected T presenter;
 
   public abstract int layoutResId();
 
@@ -17,27 +24,40 @@ public abstract class BaseActivity extends FragmentActivity {
     super.onCreate(savedInstanceState);
     setContentView(layoutResId());
     onInit(savedInstanceState);
+    presenter.attach();
+  }
+
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    hideLoadingDialog();
+    presenter.detach();
+  }
+
+  protected AppComponent getAppComponent() {
+    return BaseApplication.getInstance().getAppComponent();
   }
 
   public void onInit(@Nullable Bundle savedInstanceState) {
-    try {
-      Class<?> clazz = this.getClass();
-      Field[] fields = clazz.getDeclaredFields();//获得Activity中声明的字段
-      for (Field field : fields) {
-        // 查看这个字段是否有我们自定义的注解类标志的
-        if (field.isAnnotationPresent(BindView.class)) {
-          BindView inject = field.getAnnotation(BindView.class);
-          int id = inject.value();
-          if (id > 0) {
-            field.setAccessible(true);
-            field.set(this, this.findViewById(id));//给我们要找的字段设置值
-          }
-        }
-      }
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    } catch (IllegalArgumentException e) {
-      e.printStackTrace();
+    ButterKnife.bind(this);
+  }
+
+  protected void showLoadingDialog(String message) {
+    if (progressDialog == null) {
+      progressDialog = new ProgressDialog(this);
+      progressDialog.setCanceledOnTouchOutside(false);
+      progressDialog.setCancelable(false);
+    }
+    progressDialog.setMessage(message);
+    progressDialog.show();
+  }
+
+  protected void showLoadingDialog() {
+    showLoadingDialog("加载中...");
+  }
+
+  protected void hideLoadingDialog() {
+    if (progressDialog != null && progressDialog.isShowing()) {
+      progressDialog.dismiss();
     }
   }
 }
