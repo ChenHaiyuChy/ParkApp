@@ -1,6 +1,7 @@
 package com.cqut.haiyuchen.parkapp.di;
 
 import android.app.Application;
+import android.content.Context;
 
 /**
  * Created by haiyu.chen on 2017/4/5.
@@ -26,4 +27,10 @@ public class BaseApplication extends Application {
   public AppComponent getAppComponent() {
     return appComponent;
   }
+
+  public Context getContext() {
+    return getApplicationContext();
+  }
+
+
 }

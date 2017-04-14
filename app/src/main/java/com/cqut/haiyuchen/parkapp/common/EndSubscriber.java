@@ -1,6 +1,8 @@
 package com.cqut.haiyuchen.parkapp.common;
 
 import android.support.annotation.CallSuper;
+import android.util.Log;
+import android.widget.Toast;
 import com.cqut.haiyuchen.parkapp.di.BaseApplication;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;

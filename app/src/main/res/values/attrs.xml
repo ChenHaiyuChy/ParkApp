@@ -14,11 +14,48 @@
 -->
 
 <resources>
-    <declare-styleable name="TileView">
-        <attr name="tileSize" format="integer" />
-    </declare-styleable>
-    <declare-styleable name="ClearEditText">
-        <attr name="clear_icon" format="reference" />
-    </declare-styleable>
+  <declare-styleable name="TileView">
+    <attr format="integer" name="tileSize" />
+  </declare-styleable>
+  <declare-styleable name="ClearEditText">
+    <attr format="reference" name="clear_icon" />
+  </declare-styleable>
+  <!-- SimpleButton，简写sb -->
+  <declare-styleable name="SimpleButton">
+    <attr format="enum" name="sb_mode">
+      <enum name="normal" value="201" />
+      <enum name="check" value="202" />
+      <enum name="icon_check_invisible" value="203" />
+      <enum name="icon_check_change" value="204" />
+    </attr>
+    <attr format="enum" name="sb_shape">
+      <enum name="round_rect" value="101" />
+      <enum name="arc" value="102" />
+      <enum name="rect" value="103" />
+    </attr>
+    <!-- 3、5 是Gravity里定义的值 -->
+    <attr format="enum" name="sb_gravity">
+      <enum name="left" value="3" />
+      <enum name="right" value="5" />
+    </attr>
+    <attr format="boolean" name="sb_auto_check" />
+    <attr format="boolean" name="sb_checked" />
+    <attr format="color" name="sb_bg_color" />
+    <attr format="color" name="sb_border_color" />
+    <attr format="color" name="sb_text_color" />
+    <attr format="color" name="sb_bg_color_check" />
+    <attr format="color" name="sb_border_color_check" />
+    <attr format="color" name="sb_text_color_check" />
+    <attr format="string" name="sb_text" />
+    <attr format="string" name="sb_text_check" />
+    <attr format="dimension" name="sb_text_size" />
+    <attr format="dimension" name="sb_border_width" />
+    <attr format="dimension" name="sb_border_radius" />
+    <attr format="dimension" name="sb_vertical_padding" />
+    <attr format="dimension" name="sb_horizontal_padding" />
+    <attr format="dimension" name="sb_icon_padding" />
+    <attr format="reference" name="sb_icon" />
+    <attr format="reference" name="sb_icon_change" />
+  </declare-styleable>
 </resources>
 

@@ -1,8 +1,8 @@
 package com.cqut.haiyuchen.parkapp.di;
 
 import android.content.Context;
-import com.cqut.haiyuchen.parkapp.common.retrofit.RetrofitHelper;
-import com.cqut.haiyuchen.parkapp.common.retrofit.ServerApi;
+import com.cqut.haiyuchen.parkapp.common.network.APIService;
+import com.cqut.haiyuchen.parkapp.common.network.HttpManager;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -25,8 +25,7 @@ public class AppModule {
     }
 
     @Provides
-    @Singleton ServerApi provodeServerApi(Context context) {
-        RetrofitHelper.init(context);
-        return RetrofitHelper.getApi();
+    @Singleton APIService provodeServerApi() {
+        return HttpManager.getService();
     }
 }

@@ -12,7 +12,7 @@ import com.cqut.haiyuchen.parkapp.di.components.LoginComponent;
 import com.cqut.haiyuchen.parkapp.di.modules.LoginModule;
 import com.cqut.haiyuchen.parkapp.presentation.account.LoginPresenter;
 import com.cqut.haiyuchen.parkapp.presentation.account.LoginView;
-import com.cqut.haiyuchen.parkapp.ui.widget.BaseActivity;
+import com.cqut.haiyuchen.parkapp.ui.BaseActivity;
 
 /**
  * Created by haiyu.chen on 2017/4/5.

@@ -2,11 +2,10 @@ package com.cqut.haiyuchen.parkapp.presentation.account;
 
 import android.util.Log;
 import com.cqut.haiyuchen.parkapp.common.EndSubscriber;
-import com.cqut.haiyuchen.parkapp.common.retrofit.ServerApi;
+import com.cqut.haiyuchen.parkapp.common.network.APIService;
+import com.cqut.haiyuchen.parkapp.data.model.Book;
 import com.cqut.haiyuchen.parkapp.di.AppPresenter;
-import java.util.Map;
 import javax.inject.Inject;
-import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -15,8 +14,7 @@ import rx.schedulers.Schedulers;
  */
 
 public class LoginPresenter extends AppPresenter<LoginView> {
-
-  @Inject ServerApi serverApi;
+  @Inject APIService serverApi;
 
   @Inject public LoginPresenter(LoginView loginView) {
     super(loginView);
@@ -36,13 +34,14 @@ public class LoginPresenter extends AppPresenter<LoginView> {
     serverApi.requestUrl("小王子", 0, 3)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new EndSubscriber<Map<String, Object>>() {
+        .subscribe(new EndSubscriber<Book>() {
           @Override public void onEnd() {
             baseView.hideDialog();
+            Log.e("end", "end");
           }
 
-          @Override public void onNext(Map<String, Object> s) {
-            baseView.loginResult(s.toString());
+          @Override public void onNext(Book map) {
+            Log.e("next", map.toString());
           }
         });
   }

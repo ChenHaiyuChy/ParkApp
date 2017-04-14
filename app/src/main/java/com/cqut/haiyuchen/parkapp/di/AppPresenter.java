@@ -7,14 +7,16 @@ import javax.inject.Inject;
  */
 
 public abstract class AppPresenter<V extends MvpView> {
-    @Inject
-    protected V baseView;
+  @Inject protected V baseView;
 
-    public AppPresenter(V baseView) {
-        this.baseView = baseView;
-    }
+  public AppPresenter(V baseView) {
+    this.baseView = baseView;
+  }
 
-    public abstract void attach();
+  public void attach() {
+  }
 
-    public abstract void detach();
+  public void detach() {
+    baseView = null;
+  }
 }
