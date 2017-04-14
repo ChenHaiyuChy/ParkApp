@@ -3,12 +3,13 @@ package com.cqut.haiyuchen.parkapp.presentation.account;
 import com.cqut.haiyuchen.parkapp.di.MvpView;
 
 /**
- * Created by haiyu.chen on 2017/4/5.
+ * Created by haiyu.chen on 2017/4/14.
  */
 
-public interface LoginView extends MvpView{
-  void loginResult(boolean success,String message);
-  void initEdits();
+public interface RegisterView extends MvpView {
+  void registerResult(boolean success, String message);
+
   void showDialog();
+
   void hideDialog();
 }

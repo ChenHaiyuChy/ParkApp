@@ -35,4 +35,17 @@
     <item name="android:paddingBottom">@dimen/padding_smaller</item>
     <item name="android:gravity">center</item>
   </style>
+
+  <style name="LineNormal">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/divider_size</item>
+    <item name="android:background">@color/divider</item>
+    <item name="android:layout_marginLeft">@dimen/margin_normal</item>
+    <item name="android:layout_marginRight">@dimen/margin_normal</item>
+  </style>
+  <style name="LineMatch">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/divider_size</item>
+    <item name="android:background">@color/divider</item>
+  </style>
 </resources>

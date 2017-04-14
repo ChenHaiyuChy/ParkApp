@@ -3,7 +3,6 @@ package com.cqut.haiyuchen.parkapp.ui;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
-import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
 import com.cqut.haiyuchen.parkapp.ui.widget.BaseToast;
 
 /**
@@ -11,8 +10,8 @@ import com.cqut.haiyuchen.parkapp.ui.widget.BaseToast;
  */
 
 public abstract class AuxiliaryActivity extends AppCompatActivity {
-  protected PreferencesManager preferencesManager;
   protected BaseToast toaster;
+
   public abstract int layoutResId();
 
   @Override protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public abstract class AuxiliaryActivity extends AppCompatActivity {
 
   public void onInit() {
     ButterKnife.bind(this);
-    preferencesManager = new PreferencesManager(getApplication());
     toaster = new BaseToast();
   }
 }

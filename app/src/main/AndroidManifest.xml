@@ -32,23 +32,21 @@
       android:label="@string/app_name"
       android:supportsRtl="true"
       android:theme="@style/AppTheme.Light">
-    <activity android:name=".ui.account.LoginActivity"></activity>
+
     <activity
         android:name=".ui.SplashActivity"
         android:screenOrientation="portrait"
         android:theme="@style/SplashTheme">
-
-    </activity>
-    <activity android:name=".ui.home.HomeTabActivity">
-
-    </activity>
-    <activity android:name=".ui.account.RegisterActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name=".ui.home.HomeTabActivity"></activity>
+    <activity android:name=".ui.account.LoginActivity">
+
+    </activity>
+    <activity android:name=".ui.account.RegisterActivity"></activity>
   </application>
 
 </manifest>

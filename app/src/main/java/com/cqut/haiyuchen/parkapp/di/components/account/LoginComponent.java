@@ -1,8 +1,8 @@
-package com.cqut.haiyuchen.parkapp.di.components;
+package com.cqut.haiyuchen.parkapp.di.components.account;
 
 import com.cqut.haiyuchen.parkapp.di.ActivityScope;
 import com.cqut.haiyuchen.parkapp.di.AppComponent;
-import com.cqut.haiyuchen.parkapp.di.modules.LoginModule;
+import com.cqut.haiyuchen.parkapp.di.modules.account.LoginModule;
 import com.cqut.haiyuchen.parkapp.presentation.account.LoginPresenter;
 import com.cqut.haiyuchen.parkapp.ui.account.LoginActivity;
 import dagger.Component;

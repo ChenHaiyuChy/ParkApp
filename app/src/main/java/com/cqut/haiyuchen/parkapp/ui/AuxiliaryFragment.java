@@ -16,7 +16,6 @@ import com.cqut.haiyuchen.parkapp.ui.widget.BaseToast;
  */
 
 public abstract class AuxiliaryFragment extends Fragment {
-  protected PreferencesManager preferencesManager;
   protected BaseToast toaster;
   private Unbinder unbinder;
   private View view;
@@ -33,7 +32,6 @@ public abstract class AuxiliaryFragment extends Fragment {
 
   public void onInit() {
     unbinder = ButterKnife.bind(this, view);
-    preferencesManager = new PreferencesManager(getActivity().getApplication());
     toaster = new BaseToast();
   }
 

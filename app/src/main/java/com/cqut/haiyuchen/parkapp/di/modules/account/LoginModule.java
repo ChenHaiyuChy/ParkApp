@@ -1,4 +1,4 @@
-package com.cqut.haiyuchen.parkapp.di.modules;
+package com.cqut.haiyuchen.parkapp.di.modules.account;
 
 import com.cqut.haiyuchen.parkapp.di.ActivityScope;
 import com.cqut.haiyuchen.parkapp.presentation.account.LoginView;

@@ -22,7 +22,6 @@ import javax.inject.Inject;
 
 public abstract class BaseFragment<T extends AppPresenter> extends Fragment {
   private ProgressDialog progressDialog;
-  protected PreferencesManager preferencesManager;
   protected BaseToast toaster;
   @Inject protected T presenter;
   private Unbinder unbinder;
@@ -46,7 +45,6 @@ public abstract class BaseFragment<T extends AppPresenter> extends Fragment {
   public void onInit() {
     unbinder = ButterKnife.bind(this, view);
     unbinder = ButterKnife.bind(this, view);
-    preferencesManager = new PreferencesManager(getActivity().getApplication());
     toaster = new BaseToast();
   }
 

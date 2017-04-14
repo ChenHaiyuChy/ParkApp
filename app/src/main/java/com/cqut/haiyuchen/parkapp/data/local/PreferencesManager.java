@@ -1,9 +1,7 @@
 package com.cqut.haiyuchen.parkapp.data.local;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import com.cqut.haiyuchen.parkapp.di.BaseApplication;
 
 /**
@@ -11,23 +9,32 @@ import com.cqut.haiyuchen.parkapp.di.BaseApplication;
  */
 
 public class PreferencesManager {
-  public static final String PREFERENCES_NAME = "parkapp";
-  SharedPreferences sharedPreferences;
+  private static final String PREFERENCES_NAME = "parkapp";
+  private SharedPreferences sharedPreferences = BaseApplication.getInstance()
+      .getContext()
+      .getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+  private SharedPreferences.Editor editor = sharedPreferences.edit();
 
-  public PreferencesManager(Application application) {
-    sharedPreferences = application.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+  private static PreferencesManager instance = new PreferencesManager();
+
+  public static PreferencesManager getInstance() {
+    return instance;
   }
 
-  public void saveLoginInfo(String username, String password, boolean logged) {
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putString("username", username);
+  public void saveLoginInfo(String phoneNumber, String password, boolean logged) {
+    editor.putString("phoneNumber", phoneNumber);
     editor.putString("password", password);
     editor.putBoolean("logged", logged);
     editor.commit();
   }
 
-  public String getUserName() {
-    return sharedPreferences.getString("username", "");
+  public void setLogged(boolean logged) {
+    editor.putBoolean("logged", logged);
+    editor.commit();
+  }
+
+  public String getPhoneNumber() {
+    return sharedPreferences.getString("phoneNumber", "");
   }
 
   public String getPassword() {

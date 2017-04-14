@@ -18,7 +18,6 @@ import javax.inject.Inject;
 
 public abstract class BaseActivity<T extends AppPresenter> extends AppCompatActivity {
   private ProgressDialog progressDialog;
-  protected PreferencesManager preferencesManager;
   protected BaseToast toaster;
   @Inject protected T presenter;
 
@@ -43,7 +42,6 @@ public abstract class BaseActivity<T extends AppPresenter> extends AppCompatActi
 
   public void onInit(@Nullable Bundle savedInstanceState) {
     ButterKnife.bind(this);
-    preferencesManager = new PreferencesManager(getApplication());
     toaster = new BaseToast();
   }
 

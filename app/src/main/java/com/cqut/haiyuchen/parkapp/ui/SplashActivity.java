@@ -5,6 +5,8 @@ import android.os.Handler;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.cqut.haiyuchen.parkapp.R;
+import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
+import com.cqut.haiyuchen.parkapp.ui.account.LoginActivity;
 import com.cqut.haiyuchen.parkapp.ui.home.HomeTabActivity;
 import com.cqut.haiyuchen.parkapp.ui.widget.SimpleButton;
 import com.squareup.phrase.Phrase;
@@ -53,11 +55,10 @@ public class SplashActivity extends AuxiliaryActivity {
       mIsSkip = true;
       TIME_SECOND = 5;
       this.finish();
-      if (preferencesManager.getLogged()) {
+      if (PreferencesManager.getInstance().getLogged()) {
         startActivity(new Intent(SplashActivity.this, HomeTabActivity.class));
       } else {
-        startActivity(new Intent(SplashActivity.this, HomeTabActivity.class));
-        //startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
       }
       overridePendingTransition(R.anim.hold, R.anim.zoom_in_exit);
     }
