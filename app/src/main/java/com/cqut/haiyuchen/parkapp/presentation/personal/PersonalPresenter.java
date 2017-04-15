@@ -1,5 +1,7 @@
 package com.cqut.haiyuchen.parkapp.presentation.personal;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import com.cqut.haiyuchen.parkapp.common.EndSubscriber;
 import com.cqut.haiyuchen.parkapp.common.network.APIService;
@@ -27,6 +29,22 @@ public class PersonalPresenter extends AppPresenter<PersonalView> {
 
   @Override public void detach() {
 
+  }
+
+  public void shareMsg(String msgTitle, String msgText) {
+    Intent intent = new Intent(Intent.ACTION_SEND);
+    intent.setType("text/plain");
+    intent.putExtra(Intent.EXTRA_SUBJECT, msgTitle);
+    intent.putExtra(Intent.EXTRA_TEXT, msgText);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    baseView.doShare(intent);
+  }
+
+  public void callService(String phoneNumber) {
+    Intent intent = new Intent(Intent.ACTION_DIAL);
+    Uri data = Uri.parse("tel:" + phoneNumber);
+    intent.setData(data);
+    baseView.doCallService(intent);
   }
 
   public void getPersonalInfo() {

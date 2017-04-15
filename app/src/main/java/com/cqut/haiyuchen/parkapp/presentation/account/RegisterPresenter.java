@@ -46,7 +46,7 @@ public class RegisterPresenter extends AppPresenter<RegisterView> {
     baseView.registerResult(true, "");
   }
 
-  public void saveRegisterInfo(Application application) {
+  public void saveRegisterInfo() {
     PreferencesManager.getInstance()
         .saveLoginInfo(registerInfo.getPhoneNumber(), registerInfo.getPassword(), true);
   }

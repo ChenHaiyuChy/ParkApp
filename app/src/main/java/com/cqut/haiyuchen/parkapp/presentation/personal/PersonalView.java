@@ -1,5 +1,6 @@
 package com.cqut.haiyuchen.parkapp.presentation.personal;
 
+import android.content.Intent;
 import com.cqut.haiyuchen.parkapp.di.MvpView;
 
 /**
@@ -7,6 +8,8 @@ import com.cqut.haiyuchen.parkapp.di.MvpView;
  */
 
 public interface PersonalView extends MvpView {
+  void doShare(Intent intent);
+  void doCallService(Intent intent);
   void viewModify();
   void showDialog();
   void hideDialog();

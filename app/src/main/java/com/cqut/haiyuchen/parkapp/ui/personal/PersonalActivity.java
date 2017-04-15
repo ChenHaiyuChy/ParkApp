@@ -5,10 +5,12 @@ import android.view.View;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.cqut.haiyuchen.parkapp.R;
+import com.cqut.haiyuchen.parkapp.data.ConfigInternal;
 import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
 import com.cqut.haiyuchen.parkapp.di.components.personal.DaggerPersonalComponent;
 import com.cqut.haiyuchen.parkapp.di.components.personal.PersonalComponent;
 import com.cqut.haiyuchen.parkapp.di.modules.personal.PersonalModule;
+import com.cqut.haiyuchen.parkapp.presentation.account.ChangePasswordActivity;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalPresenter;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalView;
 import com.cqut.haiyuchen.parkapp.ui.BaseFragment;
@@ -56,8 +58,16 @@ public class PersonalActivity extends BaseFragment<PersonalPresenter> implements
 
   }
 
-  @OnClick(R.id.personal_view_info) public void infoClick() {
+  @Override public void doShare(Intent intent) {
+    startActivity(Intent.createChooser(intent, getString(R.string.share_to_friends)));
+  }
 
+  @Override public void doCallService(Intent intent) {
+    startActivity(intent);
+  }
+
+  @OnClick(R.id.personal_view_info) public void infoClick() {
+    startActivity(new Intent(getContext(), PersonalInfoActivity.class));
   }
 
   @OnClick(R.id.personal_view_my_collection) public void collectionClick() {
@@ -73,7 +83,7 @@ public class PersonalActivity extends BaseFragment<PersonalPresenter> implements
   }
 
   @OnClick(R.id.personal_view_modify_password) public void passwordClick() {
-
+    startActivity(new Intent(getContext(), ChangePasswordActivity.class));
   }
 
   @OnClick(R.id.personal_view_version_update) public void versionClick() {
@@ -81,11 +91,12 @@ public class PersonalActivity extends BaseFragment<PersonalPresenter> implements
   }
 
   @OnClick(R.id.personal_view_share_to_friends) public void shareClick() {
-
+    presenter.shareMsg(getString(R.string.share_title_message),
+        ConfigInternal.PARK_APP_DOWNLOAD_PATH);
   }
 
   @OnClick(R.id.personal_view_contact_service) public void serviceClick() {
-
+    presenter.callService(getString(R.string.call_service_number));
   }
 
   @OnClick(R.id.personal_view_sign_out) public void signoutClick() {

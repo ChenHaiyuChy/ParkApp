@@ -2,6 +2,7 @@ package com.cqut.haiyuchen.parkapp.ui.personal;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import com.cqut.haiyuchen.parkapp.R;
 import com.cqut.haiyuchen.parkapp.di.components.personal.DaggerPersonalInfoComponent;
 import com.cqut.haiyuchen.parkapp.di.components.personal.PersonalInfoComponent;
 import com.cqut.haiyuchen.parkapp.di.modules.personal.PersonalInfoModule;
@@ -17,7 +18,7 @@ public class PersonalInfoActivity extends BaseActivity<PersonalInfoPresenter>
     implements PersonalInfoView {
 
   @Override public int layoutResId() {
-    return 0;
+    return R.layout.activity_personal_info;
   }
 
   @Override public void onInit(@Nullable Bundle savedInstanceState) {

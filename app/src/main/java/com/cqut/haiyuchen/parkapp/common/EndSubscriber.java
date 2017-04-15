@@ -1,11 +1,7 @@
 package com.cqut.haiyuchen.parkapp.common;
 
 import android.support.annotation.CallSuper;
-import android.util.Log;
-import android.widget.Toast;
-import com.cqut.haiyuchen.parkapp.di.BaseApplication;
-import java.net.ConnectException;
-import java.net.SocketTimeoutException;
+import com.cqut.haiyuchen.parkapp.ui.widget.BaseToast;
 import rx.Subscriber;
 
 /**
@@ -19,6 +15,7 @@ public abstract class EndSubscriber<T> extends Subscriber<T> {
   }
 
   @CallSuper @Override public void onError(Throwable e) {
+    BaseToast.showText("网络连接失败！");
     e.printStackTrace();
     onEnd();
   }

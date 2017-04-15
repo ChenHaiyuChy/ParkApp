@@ -78,7 +78,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
   @Override public void registerResult(boolean success, String message) {
     if (success) {
-      presenter.saveRegisterInfo(getApplication());
+      presenter.saveRegisterInfo();
       this.finish();
       startActivity(new Intent(this, HomeTabActivity.class));
     } else {
