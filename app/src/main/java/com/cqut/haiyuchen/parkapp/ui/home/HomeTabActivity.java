@@ -4,15 +4,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import butterknife.BindView;
 import butterknife.OnPageChange;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.cqut.haiyuchen.parkapp.R;
+import com.cqut.haiyuchen.parkapp.ui.AuxiliaryActivity;
 import com.cqut.haiyuchen.parkapp.ui.lease.LeaseActivity;
 import com.cqut.haiyuchen.parkapp.ui.personal.PersonalActivity;
 import com.cqut.haiyuchen.parkapp.ui.service.ServiceActivity;
-import com.cqut.haiyuchen.parkapp.ui.AuxiliaryActivity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class HomeTabActivity extends AuxiliaryActivity
   @BindView(R.id.home_tab_bar) BottomNavigationBar bottomNavigationBar;
 
   private List<Fragment> fragments;
+  private long FIRST_TIME = 0;
 
   @Override public int layoutResId() {
     return R.layout.activity_home_tab;
@@ -101,5 +103,18 @@ public class HomeTabActivity extends AuxiliaryActivity
   }
 
   @Override public void onTabUnselected(int position) {
+  }
+
+  @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+      long secondTime = System.currentTimeMillis();
+      if (secondTime - FIRST_TIME > 2000) {
+        toaster.showText(getString(R.string.repress_exit_app));
+        FIRST_TIME = secondTime;
+      } else {
+        System.exit(0);
+      }
+    }
+    return false;
   }
 }

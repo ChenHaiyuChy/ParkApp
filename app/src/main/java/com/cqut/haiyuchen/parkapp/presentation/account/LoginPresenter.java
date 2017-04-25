@@ -29,12 +29,16 @@ public class LoginPresenter extends AppPresenter<LoginView> {
     loginInfo = null;
   }
 
+  public void initData(){
+    loginInfo = new LoginInfo();
+  }
+
   public void setLoginInfo(String phoneNUmber, String password) {
     loginInfo.setPhoneNumber(phoneNUmber);
     loginInfo.setPassword(password);
   }
 
-  public void saveLoginInfo(Application application) {
+  public void saveLoginInfo() {
     PreferencesManager.getInstance()
         .saveLoginInfo(loginInfo.getPhoneNumber(), loginInfo.getPassword(), true);
   }

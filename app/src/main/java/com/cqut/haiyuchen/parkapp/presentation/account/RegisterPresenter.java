@@ -1,6 +1,5 @@
 package com.cqut.haiyuchen.parkapp.presentation.account;
 
-import android.app.Application;
 import com.cqut.haiyuchen.parkapp.common.network.APIService;
 import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
 import com.cqut.haiyuchen.parkapp.data.model.RegisterInfo;
@@ -28,6 +27,10 @@ public class RegisterPresenter extends AppPresenter<RegisterView> {
     registerInfo.setPhoneNumber(phoneNumber);
     registerInfo.setPassword(password);
     registerInfo.setSmsCaptcha(captcha);
+  }
+
+  public void dataInit(){
+    registerInfo = new RegisterInfo();
   }
 
   public String getSmsCaptcha() {

@@ -73,4 +73,7 @@
   <dimen name="little_length_smallest">3dip</dimen>
   <dimen name="little_length_extra_small">2dip</dimen>
   <dimen name="little_length_extreme_small">1dip</dimen>
+
+  <!-- Lease -->
+  <dimen name="lease_head_length">35dip</dimen>
 </resources>

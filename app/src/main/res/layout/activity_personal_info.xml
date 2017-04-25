@@ -25,6 +25,7 @@
         android:textSize="@dimen/font_large"
         />
     <Button
+        android:id="@+id/personal_info_btn_save"
         android:layout_width="@dimen/length_middle"
         android:layout_height="@dimen/length_middle"
         android:layout_alignParentRight="true"
@@ -73,6 +74,7 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_nick_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
@@ -80,6 +82,7 @@
             android:layout_toRightOf="@id/info_nick_name"
             android:background="@android:color/transparent"
             android:maxLength="8"
+            android:singleLine="true"
             />
       </RelativeLayout>
       <View style="@style/LineNormal" />
@@ -97,7 +100,7 @@
             android:textSize="@dimen/font_normal"
             />
         <RadioGroup
-            android:id="@+id/info_rg_sex"
+            android:id="@+id/personal_info_rg_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -106,14 +109,14 @@
             android:orientation="horizontal"
             >
           <RadioButton
-              android:id="@+id/male"
+              android:id="@+id/personal_info_rb_sex_male"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:checked="true"
               android:text="@string/male"
               />
           <RadioButton
-              android:id="@+id/female"
+              android:id="@+id/personal_info_rb_sex_female"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginLeft="@dimen/margin_large"
@@ -136,6 +139,7 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_birthday"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
@@ -159,8 +163,10 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="@dimen/margin_normal"
             android:layout_marginRight="@dimen/margin_normal"
             android:layout_toRightOf="@id/info_email"
@@ -179,10 +185,11 @@
             android:layout_width="@dimen/length_middle"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/address"
+            android:text="@string/area"
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_address"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
@@ -206,13 +213,14 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_address_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
             android:layout_marginRight="@dimen/margin_normal"
             android:layout_toRightOf="@id/info_address_detail"
             android:background="@android:color/transparent"
-            android:lines="1"
+            android:singleLine="true"
             />
       </RelativeLayout>
       <View
@@ -233,6 +241,7 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
@@ -256,6 +265,7 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_car_number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
@@ -281,6 +291,7 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/personal_info_et_account"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"

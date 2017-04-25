@@ -10,7 +10,7 @@ import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
 import com.cqut.haiyuchen.parkapp.di.components.personal.DaggerPersonalComponent;
 import com.cqut.haiyuchen.parkapp.di.components.personal.PersonalComponent;
 import com.cqut.haiyuchen.parkapp.di.modules.personal.PersonalModule;
-import com.cqut.haiyuchen.parkapp.presentation.account.ChangePasswordActivity;
+import com.cqut.haiyuchen.parkapp.ui.account.ChangePasswordActivity;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalPresenter;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalView;
 import com.cqut.haiyuchen.parkapp.ui.BaseFragment;

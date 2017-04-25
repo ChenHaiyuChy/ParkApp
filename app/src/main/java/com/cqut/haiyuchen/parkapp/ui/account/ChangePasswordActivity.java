@@ -1,4 +1,4 @@
-package com.cqut.haiyuchen.parkapp.presentation.account;
+package com.cqut.haiyuchen.parkapp.ui.account;
 
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;

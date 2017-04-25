@@ -48,6 +48,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     component.inject(this);
     component.inject(presenter);
     setLoginButtonEnabled(false);
+    presenter.initData();
     presenter.initEdits();
   }
 
@@ -61,7 +62,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
   @Override public void loginResult(boolean success, String message) {
     if (success) {
-      presenter.saveLoginInfo(getApplication());
+      presenter.saveLoginInfo();
       this.finish();
       startActivity(new Intent(this, HomeTabActivity.class));
     } else {

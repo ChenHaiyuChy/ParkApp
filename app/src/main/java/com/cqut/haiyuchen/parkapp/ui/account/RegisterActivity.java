@@ -74,6 +74,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     component.inject(this);
     component.inject(presenter);
     setRegisterButtonEnabled(false);
+    presenter.dataInit();
   }
 
   @Override public void registerResult(boolean success, String message) {

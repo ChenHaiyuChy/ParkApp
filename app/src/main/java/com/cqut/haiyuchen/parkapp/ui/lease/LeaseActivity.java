@@ -1,18 +1,22 @@
 package com.cqut.haiyuchen.parkapp.ui.lease;
 
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.cqut.haiyuchen.parkapp.R;
 import com.cqut.haiyuchen.parkapp.ui.AuxiliaryFragment;
-import com.cqut.haiyuchen.parkapp.ui.widget.BaseToast;
 
 /**
  * Created by haiyu.chen on 2017/4/11.
  */
 
 public class LeaseActivity extends AuxiliaryFragment {
-  @BindView(R.id.tv_ddd) TextView tvDdd;
+
+  @BindView(R.id.lease_btn_rent) Button btnRent;
+  @BindView(R.id.lease_btn_rented) Button btnRented;
+  @BindView(R.id.lease_layout_rent) View layoutRent;
+  @BindView(R.id.lease_layout_rented) View layoutRented;
 
   @Override public int layoutResId() {
     return R.layout.activity_lease;
@@ -20,10 +24,19 @@ public class LeaseActivity extends AuxiliaryFragment {
 
   @Override public void onInit() {
     super.onInit();
-    tvDdd.setText("ddd");
   }
 
-  @OnClick(R.id.tv_ddd) void dddClick() {
-    BaseToast.showText("ddd");
+  @OnClick(R.id.lease_btn_rent) public void rentClick() {
+    btnRent.setEnabled(false);
+    btnRented.setEnabled(true);
+    layoutRent.setVisibility(View.VISIBLE);
+    layoutRented.setVisibility(View.GONE);
+  }
+
+  @OnClick(R.id.lease_btn_rented) public void rentedClick() {
+    btnRent.setEnabled(true);
+    btnRented.setEnabled(false);
+    layoutRent.setVisibility(View.GONE);
+    layoutRented.setVisibility(View.VISIBLE);
   }
 }
