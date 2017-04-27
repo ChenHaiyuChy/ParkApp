@@ -8,6 +8,7 @@
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:scrollbars="none"
       >
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,22 +44,151 @@
       </LinearLayout>
       <RelativeLayout
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/bg_oval_light_blue"
+          android:layout_height="@dimen/length_small"
           android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
+          android:padding="@dimen/padding_smaller"
+          >
+        <Spinner
+            android:id="@+id/rented_sp_lock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:spinnerMode="dropdown"
+            />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/length_small"
+          android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
           android:padding="@dimen/padding_smaller"
           >
         <TextView
             android:id="@+id/topic_name"
-            android:layout_width="50dp"
+            android:layout_width="@dimen/length_little_large"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="@string/name"
             android:textSize="@dimen/font_normal"
             />
-
+        <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/rented_et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/topic_name"
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            />
       </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/length_small"
+          android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
+          android:padding="@dimen/padding_smaller"
+          >
+        <TextView
+            android:id="@+id/topic_start_time"
+            android:layout_width="@dimen/length_little_large"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/start_time"
+            android:textSize="@dimen/font_normal"
+            />
+        <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/rented_et_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/topic_start_time"
+            android:background="@android:color/transparent"
+            />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/length_small"
+          android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
+          android:padding="@dimen/padding_smaller"
+          >
+        <TextView
+            android:id="@+id/topic_end_time"
+            android:layout_width="@dimen/length_little_large"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/end_time"
+            android:textSize="@dimen/font_normal"
+            />
+        <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/rented_et_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/topic_end_time"
+            android:background="@android:color/transparent"
+            />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/length_small"
+          android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
+          android:padding="@dimen/padding_smaller"
+          >
+        <TextView
+            android:id="@+id/topic_address"
+            android:layout_width="@dimen/length_little_large"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/address"
+            android:textSize="@dimen/font_normal"
+            />
+        <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/rented_et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/topic_address"
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/length_small"
+          android:layout_margin="@dimen/margin_smaller"
+          android:background="@drawable/bg_oval_light_blue"
+          android:padding="@dimen/padding_smaller"
+          >
+        <TextView
+            android:id="@+id/topic_contact_way"
+            android:layout_width="@dimen/length_little_large"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/contact_way"
+            android:textSize="@dimen/font_normal"
+            />
+        <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
+            android:id="@+id/rented_et_contact_way"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/topic_contact_way"
+            android:background="@android:color/transparent"
+            />
+      </RelativeLayout>
+      <Button
+          android:id="@+id/rented_btn_rented"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/margin_normal"
+          android:text="@string/i_want_rented"
+          style="@style/Button.OvalBlue"
+          />
     </LinearLayout>
-
   </ScrollView>
 
 

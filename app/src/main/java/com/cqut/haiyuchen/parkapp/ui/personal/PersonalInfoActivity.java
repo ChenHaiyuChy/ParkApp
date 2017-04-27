@@ -2,6 +2,7 @@ package com.cqut.haiyuchen.parkapp.ui.personal;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import com.cqut.haiyuchen.parkapp.di.modules.personal.PersonalInfoModule;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalInfoPresenter;
 import com.cqut.haiyuchen.parkapp.presentation.personal.PersonalInfoView;
 import com.cqut.haiyuchen.parkapp.ui.BaseActivity;
+import com.lljjcoder.citypickerview.widget.CityPicker;
 import java.util.Date;
 
 /**
@@ -35,7 +37,7 @@ public class PersonalInfoActivity extends BaseActivity<PersonalInfoPresenter>
   @BindView(R.id.personal_info_rb_sex_female) RadioButton rbFemale;
   @BindView(R.id.personal_info_et_birthday) EditText etBirthday;
   @BindView(R.id.personal_info_et_email) EditText etEmail;
-  @BindView(R.id.personal_info_et_address) EditText etAddress;
+  @BindView(R.id.personal_info_et_area) EditText etArea;
   @BindView(R.id.personal_info_et_address_detail) EditText etAddressDetail;
   @BindView(R.id.personal_info_et_mobile) EditText etMobile;
   @BindView(R.id.personal_info_et_car_number) EditText etCarNumber;
@@ -44,13 +46,14 @@ public class PersonalInfoActivity extends BaseActivity<PersonalInfoPresenter>
   @BindView(R.id.personal_info_btn_save) Button btnSave;
 
   private DatePickerDialog datePickerDialog;
+  private CityPicker cityPicker;
+
 
   @Override public int layoutResId() {
     return R.layout.activity_personal_info;
   }
 
   @Override public void onInit(@Nullable Bundle savedInstanceState) {
-    super.onInit(savedInstanceState);
     super.onInit(savedInstanceState);
     PersonalInfoComponent component = DaggerPersonalInfoComponent.builder()
         .appComponent(getAppComponent())
@@ -65,6 +68,16 @@ public class PersonalInfoActivity extends BaseActivity<PersonalInfoPresenter>
     etMobile.setText(PreferencesManager.getInstance().getPhoneNumber());
     etMobile.setFocusable(false);
     etBirthday.setFocusable(false);
+
+    etArea.setFocusable(false);
+    cityPicker = presenter.initCityPicker(this);
+    cityPicker.setOnCityItemClickListener(new CityPicker.OnCityItemClickListener() {
+      @Override public void onSelected(String... citySelected) {
+        etArea.setText(citySelected[0] + "-" + citySelected[1] + "-" + citySelected[2]);
+      }
+      @Override public void onCancel() {
+      }
+    });
 
     presenter.dateInit();
     datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
@@ -99,6 +112,10 @@ public class PersonalInfoActivity extends BaseActivity<PersonalInfoPresenter>
 
   @OnClick(R.id.personal_info_btn_save) public void saveClick() {
     toaster.showText(rbMale.isChecked() ? "1" : "0");
+  }
+
+  @OnClick(R.id.personal_info_et_area) public void areaClick() {
+    cityPicker.show();
   }
 
   @Override protected void onResume() {

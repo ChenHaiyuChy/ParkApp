@@ -21,7 +21,6 @@
           android:layout_width="@dimen/length_large"
           android:layout_height="@dimen/lease_head_length"
           android:background="@drawable/bg_btn_rent"
-          android:enabled="false"
           android:text="@string/lease_rent"
           android:textColor="@color/button_lease_color"
           />

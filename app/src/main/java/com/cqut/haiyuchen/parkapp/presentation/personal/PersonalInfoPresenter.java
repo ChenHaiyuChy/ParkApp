@@ -1,10 +1,13 @@
 package com.cqut.haiyuchen.parkapp.presentation.personal;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import com.cqut.haiyuchen.parkapp.common.EndSubscriber;
 import com.cqut.haiyuchen.parkapp.common.network.APIService;
 import com.cqut.haiyuchen.parkapp.data.model.Book;
 import com.cqut.haiyuchen.parkapp.di.AppPresenter;
+import com.lljjcoder.citypickerview.widget.CityPicker;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -79,6 +82,28 @@ public class PersonalInfoPresenter extends AppPresenter<PersonalInfoView> {
       e.printStackTrace();
     }
     return dateLong;
+  }
+
+  public CityPicker initCityPicker(Context context){
+    return new CityPicker.Builder(context)
+        .textSize(20)
+        .title("地址选择")
+        .backgroundPop(0000000000)
+        .titleBackgroundColor("#E9E9E9")
+        .titleTextColor("#333333")
+        .confirTextColor("#4C7EE9")
+        .cancelTextColor("#333333")
+        .province("重庆市")
+        .city("重庆市")
+        .district("巴南区")
+        .textColor(Color.parseColor("#333333"))
+        .provinceCyclic(false)
+        .cityCyclic(false)
+        .districtCyclic(false)
+        .visibleItemsCount(8)
+        .itemPadding(5)
+        .onlyShowProvinceAndCity(false)
+        .build();
   }
 
   public void getPersonalInfo() {

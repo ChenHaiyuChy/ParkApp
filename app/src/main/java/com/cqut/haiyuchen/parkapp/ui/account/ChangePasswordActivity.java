@@ -1,5 +1,7 @@
 package com.cqut.haiyuchen.parkapp.ui.account;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
@@ -12,13 +14,19 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import com.cqut.haiyuchen.parkapp.R;
 import com.cqut.haiyuchen.parkapp.data.local.PreferencesManager;
-import com.cqut.haiyuchen.parkapp.ui.AuxiliaryActivity;
+import com.cqut.haiyuchen.parkapp.di.components.account.ChangePasswordComponent;
+import com.cqut.haiyuchen.parkapp.di.components.account.DaggerChangePasswordComponent;
+import com.cqut.haiyuchen.parkapp.di.modules.account.ChangePasswordModule;
+import com.cqut.haiyuchen.parkapp.presentation.account.ChangePasswordPresenter;
+import com.cqut.haiyuchen.parkapp.presentation.account.ChangePasswordView;
+import com.cqut.haiyuchen.parkapp.ui.BaseActivity;
 
 /**
  * Created by haiyu.chen on 2017/4/15.
  */
 
-public class ChangePasswordActivity extends AuxiliaryActivity {
+public class ChangePasswordActivity extends BaseActivity<ChangePasswordPresenter>
+    implements ChangePasswordView {
 
   @BindView(R.id.change_password_et_phone_number) EditText etPhoneNumber;
   @BindView(R.id.change_password_et_old_password) EditText etOldPassword;
@@ -32,8 +40,18 @@ public class ChangePasswordActivity extends AuxiliaryActivity {
     return R.layout.activity_change_password;
   }
 
-  @Override public void onInit() {
-    super.onInit();
+  @Override public void onInit(@Nullable Bundle savedInstanceState) {
+    super.onInit(savedInstanceState);
+    ChangePasswordComponent component = DaggerChangePasswordComponent.builder()
+        .appComponent(getAppComponent())
+        .changePasswordModule(new ChangePasswordModule(this))
+        .build();
+    component.inject(this);
+    component.inject(presenter);
+    controlsInit();
+  }
+
+  public void controlsInit() {
     setChangePasswordEnabled(false);
     etPhoneNumber.setText(PreferencesManager.getInstance().getPhoneNumber());
     etPhoneNumber.setEnabled(false);
@@ -79,6 +97,14 @@ public class ChangePasswordActivity extends AuxiliaryActivity {
 
   @OnClick(R.id.change_password_btn_change_password) public void btnChangePassword() {
 
+  }
+
+  @Override public void showDialog() {
+    showLoadingDialog();
+  }
+
+  @Override public void hideDialog() {
+    hideLoadingDialog();
   }
 
   public void setChangePasswordEnabled(boolean enabled) {

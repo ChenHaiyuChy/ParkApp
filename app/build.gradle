@@ -49,4 +49,6 @@ dependencies {
   compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
   /* Layout percent */
   compile 'com.android.support:percent:25.2.0'
+  /* CityPicker */
+  compile 'liji.library.dev:citypickerview:1.0.0'
 }

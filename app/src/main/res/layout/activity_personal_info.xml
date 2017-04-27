@@ -181,7 +181,7 @@
           android:paddingLeft="@dimen/padding_normal"
           >
         <TextView
-            android:id="@+id/info_address"
+            android:id="@+id/info_area"
             android:layout_width="@dimen/length_middle"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -189,12 +189,12 @@
             android:textSize="@dimen/font_normal"
             />
         <com.cqut.haiyuchen.parkapp.ui.widget.ClearEditText
-            android:id="@+id/personal_info_et_address"
+            android:id="@+id/personal_info_et_area"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_normal"
             android:layout_marginRight="@dimen/margin_normal"
-            android:layout_toRightOf="@id/info_address"
+            android:layout_toRightOf="@id/info_area"
             android:background="@android:color/transparent"
             />
       </RelativeLayout>
